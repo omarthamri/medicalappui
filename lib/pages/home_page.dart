@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:medicalappui/utils/category_card.dart';
+import 'package:medicalappui/utils/doctor_card.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -83,6 +85,65 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ),
               ),
+              SizedBox(height: 25,),
+              Container(
+                  height: 80,
+                  child: ListView(
+                    scrollDirection: Axis.horizontal,
+                    children: [
+                    CategoryCard(
+                      categoryName: "Dentist",
+                      iconImagePath: 'lib/icones/icone_1.png',
+                    ),
+                    CategoryCard(
+                      categoryName: "Pharmacist",
+                      iconImagePath: 'lib/icones/icone_2.png',
+                    ),
+                    CategoryCard(
+                      categoryName: "Surgeon",
+                      iconImagePath: 'lib/icones/icone_1.png',
+                    ),
+                  ],),
+              ),
+              SizedBox(height: 25,),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 25),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                  Text('Doctor List',
+                  style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20),),
+                  Text('See all',
+                  style: TextStyle(fontSize: 16,
+                  color: Colors.grey[500],
+                  fontWeight: FontWeight.bold),),
+                ],),
+              ),
+              SizedBox(height: 25,),
+              Expanded(child: ListView(
+                scrollDirection: Axis.horizontal,
+                children: [
+                DoctorCard(
+                  doctorImagePath: 'lib/images/doctor_1.jpg',
+                  rating: '4.9',
+                  doctorName: 'Dr. Zlatan Ibrahimovic',
+                  doctorProfession: 'Therapist',
+                ),
+                DoctorCard(
+                  doctorImagePath: 'lib/images/doctor_2.jpg',
+                  rating: '4.3',
+                  doctorName: 'Dr. maria sharapova',
+                  doctorProfession: 'surgeon',
+                ),
+                DoctorCard(
+                  doctorImagePath: 'lib/images/doctor_3.jpg',
+                  rating: '4.5',
+                  doctorName: 'Dr. harvey specter',
+                  doctorProfession: 'cardiologist',
+                ),
+              ],),
+              ),
+              
        ],),
      ),
 
